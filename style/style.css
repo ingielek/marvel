@@ -1,17 +1,30 @@
-body {
+* {
     margin: 0px;
     padding: 0px;
+    font-family: Helvetica;
+    text-decoration: none;
+    color: black;
+}
+
+.welcomeSite {
     background-color: #ffc200;
 }
 
-#main {
+.centerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+}
+
+.main {
     height: 100vh;
     width: 100%;
     position: fixed;
-    display: none;
 }
 
-#logoSection {
+.logoSection {
     height: 100%;
     width: 50%;
     background-color: #fcfcfc;
@@ -20,7 +33,7 @@ body {
     z-index: 999;
 }
 
-#logoSection img {
+.logoSection img {
     width: 200px;
     height: 100px;
     position: absolute;
@@ -29,7 +42,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#menuSection {
+.menuSection {
     height: 100%;
     width: 50%;
     background-color: #f1f1f1;
@@ -37,7 +50,7 @@ body {
     left: 50%
 }
 
-#menuSection ul {
+.menuSection ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -46,9 +59,9 @@ body {
     left: -1%;
 }
 
-#menuSection ul li {
+.menuSection ul li {
     height: 100px;
-    width: 350px;
+    width: 450px;
     font-family: "Helvetica Neue";
     font-size: 60px;
     font-weight: bold;
@@ -68,15 +81,11 @@ body {
     transition: all .5s;
 }
 
-.rotate {
-    pointer-events: none;
-}
-
-#menuSection ul li:hover .menu {
+.menuSection ul li:hover .menu {
     width: 350px;
 }
 
-#openMenu, #closeMenu {
+.openMenu, .closeMenu {
     height: 100px;
     width: 100px;
     background-color: #262626;
@@ -89,7 +98,7 @@ body {
 }
 .fas {
     color: white;
-    padding-left: 37%;
+    padding-left: 34%;
     padding-top: 37%;
     font-size: 25px;
 }
@@ -102,6 +111,161 @@ body {
 }
 
 
-#closeMenu {
+.closeMenu {
     left: 100%;
+}
+
+#about {
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    width: 550px;
+    font-family: Helvetica;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: lowercase;
+    line-height: 145%;
+    font-size: 14pt;
+    font-variant: small-caps;
+}
+
+.heroesBackground{
+    background-color: red;
+}
+.sliderSite {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%);
+    overflow: hidden;
+    transition: all .5s;
+}
+
+#slider {
+    width: 300%;
+    position: relative;
+    left: 0;
+}
+
+#slider img {
+    width: 33.33%;
+    float: left;
+}
+
+.nextBtn, .prevBtn {
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 35px;
+    position: fixed;
+    top: 85%;
+    left: 53%;
+    cursor: pointer;
+}
+
+.prevBtn {
+    left: 47%;
+}
+
+.signInForm, .signUpForm {
+    height: 600px;
+    width: 600px;
+    background-color: white;
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-size: 30px;
+    color: #222;
+    text-align: center;
+}
+
+hr {
+    margin: 5px auto;
+    padding: 0px;
+}
+
+input[type=text], input[type=password], input[type=email]{
+    height: 35px;
+    width: 250px;
+    font-size: 11px;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    border: 1px solid darkgray;
+    padding: 20px;
+}
+
+.forgotPassword {
+    color: #222;
+    font-size: 12px;
+}
+
+.signInBtn, .signUpBtn {
+    height: 35px;
+    width: 250px;
+    font-size: 14px;
+    color: white;
+    line-height: 0px;
+    border: none;
+    outline: none;
+    background-color: red;
+    border-radius: 35px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.signUpMsg, .signInMsg {
+    font-size: 12px;
+    color: #777;
+}
+
+a {
+    color: #313AA3;
+}
+
+.signInForm {
+    backface-visibility: hidden;
+    animation-duration:2s;
+}
+
+.signUpForm {
+    backface-visibility: hidden;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    animation-duration:2s;
+}
+
+@-webkit-keyframes showSignUp {
+    0%{transform: translate(-50%, -50%) rotateY(0deg);}
+    100%{transform: translate(-50%, -50%) rotateY(180deg);}
+}
+
+@-webkit-keyframes hideSignIn {
+    0%{transform: translate(-50%, -50%) rotateY(180deg);}
+    100%{transform: translate(-50%, -50%) rotateY(0deg);}
+}
+
+@-webkit-keyframes showSignIn {
+    0%{transform: translate(-50%, -50%) rotateY(0deg);}
+    100%{transform: translate(-50%, -50%) rotateY(180deg);}
+}
+
+@-webkit-keyframes hideSignUp {
+    0%{transform: translate(-50%, -50%) rotateY(180deg);}
+    100%{transform: translate(-50%, -50%) rotateY(0deg);}
 }
